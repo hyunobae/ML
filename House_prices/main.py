@@ -170,3 +170,10 @@ y_test = lr.predict(x_test)
 
 print('training set accuracy:', lr.score(x_train, y_train))
 print('validation set accuracy:', lr.score(x_test, y_test))
+
+submit = pd.DataFrame({
+    'Id' : test['Id'],
+    'SalePrice' : y_test
+})
+submit.to_csv('save.csv', index=False)
+#선형회귀 정확도 많이 떨어짐 -> 다른 방법 시도해보자 / 전처리가 부족한 이유일지도?
